@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Mate rosa",
+    "precio": "2000",
+    "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/804/835/products/rosa71-7a12dc7a7959e44aa216493427057741-1024-1024.png",
+    "id": 1
+  },
+  {
+    "nombre": "Vaso de acrilico con glitter",
+    "precio": "1600",
+    "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/174/214/products/f239eee3-840e-4c79-92aa-9db91f3760ae-4acc02c1678523463a16354398480360-1024-1024.jpeg",
+    "id": 2
+  },
+  {
+    "nombre": "Termo acero inoxidable",
+    "precio": "6500",
+    "imagen": "https://plataforma.interfuerzas.com.ar/Panelcontenidos/Contenidos/Termo-acero-inoxidable-1-litro-waterdog-con-manija-1620854614-0-1.jpg",
+    "id": 3
+  }
+]
