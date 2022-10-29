@@ -1,4 +1,4 @@
-const fs= require("fs")
+import fs from 'fs'
 
 const infoJson="./productos.json";
 
@@ -149,4 +149,4 @@ deleteAll= async()=>{
 }
 
 
-module.exports= Contenedor;
+export default Contenedor;

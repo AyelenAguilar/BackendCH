@@ -1,17 +1,18 @@
-const Contenedor= require("./contenedor");
-const contenedor= new Contenedor();
+
+//const Contenedor= require("./contenedor");
+//const contenedor= new Contenedor();
 
 //agregamos un producto
 
-let prod={
-    nombre:"Termo acero inoxidable",
-    precio:"6500",
-    imagen:"https://plataforma.interfuerzas.com.ar/Panelcontenidos/Contenidos/Termo-acero-inoxidable-1-litro-waterdog-con-manija-1620854614-0-1.jpg"
-};
+//let prod={
+//    nombre:"Termo acero inoxidable",
+//    precio:"6500",
+//    imagen:"https://plataforma.interfuerzas.com.ar/Panelcontenidos/Contenidos/Termo-acero-inoxidable-1-litro-waterdog-con-manija-1620854614-0-1.jpg"
+//};
 
-contenedor.AgregarProducto(prod).then((res)=>{
-    console.log(res);
-});
+//contenedor.AgregarProducto(prod).then((res)=>{
+ //   console.log(res);
+//});
 
 
 //contenedor.leerProds().then((res)=>{
