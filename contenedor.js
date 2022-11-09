@@ -1,10 +1,11 @@
 import fs from 'fs'
+import __dirname from './utils.js'
 
-const infoJson="./productos.json";
+const infoJson= __dirname + "./productos.json";
 
 class Contenedor{ 
     AgregarProducto= async(producto)=>{
-        if(!producto.nombre || !producto.precio || !producto.imagen){
+        if(!producto.nombre || !producto.precio){
             return{
                 status:"error",
                 message:"Hay campos incompletos"
@@ -144,6 +145,70 @@ deleteAll= async()=>{
             message:"No se pudieron eliminar todos los productos"
         }
     }
+}
+
+deleteObj = async () => {
+    try {
+        if (fs.existsSync(pathToFile)) {
+            let newProd = [];
+            await fs.promises.writeFile(pathToFile, JSON.stringify(newProd))
+            return {
+                status: "success",
+                Message: "Deleted all products"
+            }
+        } else {
+            return {
+                status: "Error",
+                Message: "File not found"
+            }
+        }
+    } catch (error) {
+        return {
+            status: "Error",
+            message: error.message
+        }
+    }
+}
+
+updateItem = async (object, id) => {
+    if (!id) {
+        return {
+            status: "Error",
+            message: "ID is required"
+        }
+    }
+    let products = await this.getAll()
+    try {
+        let arrayProducts = products.productos.map(product => {
+            if (product.id == id) {
+                return {
+                    nombre: object.nombre ? object.nombre : product.nombre,
+                    precio: object.precio ? object.precio : product.precio,
+                    imagen: object.imagen ? object.imagen : product.imagen,
+                    id: product.id
+                }
+            } else {
+                return product
+            }
+        })
+        let productUpdate = arrayProducts.find(product => product.id == id)
+        if (productUpdate) {
+            await fs.promises.writeFile(pathToFile, JSON.stringify(arrayProducts, null, 2))
+            return {
+                status: "success",
+                message: "successfully upgraded product",
+                productNew: productUpdate
+            }
+        } else {
+            return {
+                status: "error",
+                message: "Product not found"
+            }
+        }
+    } catch {
+        return products
+    }
+
 }
 
 }
