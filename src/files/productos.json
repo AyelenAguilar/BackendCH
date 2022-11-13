@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Funda drewhouse",
+    "precio": "2800",
+    "imagen": "http://localhost:8080/imagen/1668373358444-funda-drewhouse.jpg",
+    "id": 1
+  },
+  {
+    "nombre": "Funda  3Perritos ",
+    "precio": "3400",
+    "imagen": "http://localhost:8080/imagen/1668373394595-funda-brown.jpg",
+    "id": 2
+  },
+  {
+    "nombre": "Anillo soporte oso cristal",
+    "precio": "2500",
+    "imagen": "http://localhost:8080/imagen/1668373437765-anillo-oso.jpg",
+    "id": 3
+  },
+  {
+    "nombre": "Funda Dino",
+    "precio": "3000",
+    "imagen": "http://localhost:8080/imagen/1668373455860-funda-dino.jpg",
+    "id": 4
+  }
+]

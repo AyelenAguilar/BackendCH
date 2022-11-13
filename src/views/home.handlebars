@@ -1,0 +1,14 @@
+<div>
+    <h1>Lista de productos ingresados</h1>
+    <div>
+        {{#each prods.productos}}
+        <p>Producto: {{this.nombre}}</p>
+        <p>Precio: {{this.precio}}</p>
+        <img src="{{this.imagen}}" alt="{{this.nombre}}">
+    {{/each}}
+    
+    <p>{{productos.mensaje}}</p>
+    </div>
+
+    <a href="http://localhost:8080/"><button>Volver a página principal</button></a> 
+</div>

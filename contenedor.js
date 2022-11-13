@@ -1,7 +1,7 @@
 import fs from 'fs'
-import __dirname from './utils.js'
+import __dirname from './src/utils.js'
 
-const infoJson= __dirname + "./productos.json";
+const infoJson= __dirname + "/files/productos.json";
 
 class Contenedor{ 
     AgregarProducto= async(producto)=>{
@@ -149,9 +149,9 @@ deleteAll= async()=>{
 
 deleteObj = async () => {
     try {
-        if (fs.existsSync(pathToFile)) {
+        if (fs.existsSync(infoJson)) {
             let newProd = [];
-            await fs.promises.writeFile(pathToFile, JSON.stringify(newProd))
+            await fs.promises.writeFile(infoJson, JSON.stringify(newProd))
             return {
                 status: "success",
                 Message: "Deleted all products"
@@ -177,9 +177,9 @@ updateItem = async (object, id) => {
             message: "ID is required"
         }
     }
-    let products = await this.getAll()
+    let productos = await this.leerProds()
     try {
-        let arrayProducts = products.productos.map(product => {
+        let arrayProducts = productos.productos.map(product => {
             if (product.id == id) {
                 return {
                     nombre: object.nombre ? object.nombre : product.nombre,
@@ -193,7 +193,7 @@ updateItem = async (object, id) => {
         })
         let productUpdate = arrayProducts.find(product => product.id == id)
         if (productUpdate) {
-            await fs.promises.writeFile(pathToFile, JSON.stringify(arrayProducts, null, 2))
+            await fs.promises.writeFile(infoJson, JSON.stringify(arrayProducts, null, 2))
             return {
                 status: "success",
                 message: "successfully upgraded product",
@@ -206,7 +206,7 @@ updateItem = async (object, id) => {
             }
         }
     } catch {
-        return products
+        return productos
     }
 
 }
